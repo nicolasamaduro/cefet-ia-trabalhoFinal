@@ -10,16 +10,8 @@ namespace cefet_ia_trabalhoFinal
             
             //doenças
             Doenca cancer= new Doenca("Cancer"); //1
-            Doenca oxiuros= new Doenca("Oxiuros"); //2
-            Doenca gripe= new Doenca("Gripe"); //3
-            Doenca pneumonia= new Doenca("Pneumonia"); //4
             Doenca aids= new Doenca("Aids"); //5
-            Doenca infarto= new Doenca("Infarto"); //6
-            Doenca diabetes1= new Doenca("Diabetes Tipo 1"); //7
             Doenca asma= new Doenca("Asma"); //8
-            Doenca tuberculose= new Doenca("Tuberculose"); //9
-            Doenca dengue= new Doenca("Dengue"); //10
-            Doenca avc =new Doenca("Derrame cerebral (AVC)");  
 
             //sintomas
             Sintoma alteracaoFala= new Sintoma("Alteração na fala");
@@ -51,6 +43,7 @@ namespace cefet_ia_trabalhoFinal
             Sintoma macicatriz=new Sintoma("Má cicatrização");
             Sintoma manchasPele=new Sintoma ("Manchas na pele");
 
+            Sintoma perdaPeso= new Sintoma("Perda de peso");
             Sintoma perdaCoordenacao= new Sintoma("Perda de coordenação");
             Sintoma pruidoAnal= new Sintoma("Pruido Anal");
 
@@ -66,6 +59,24 @@ namespace cefet_ia_trabalhoFinal
             
             Sintoma visaoTurva=new Sintoma ("Visão turva");
             
+            
+            
+            //Relação doencas e sintomas
+
+            //Sintomas Tuberculose
+            List<Fato> sistomasTuberculose= new List<Fato>();
+            List<Operador> operadoresTuberculose= new List<Operador>();
+            sintomasTuberculose.Add(febre);
+            operadoresTuberculose.Add(e);
+            sintomasTuberculose.Add(tosseSeca);
+            operadoresTuberculose.Add(ou);
+            sintomasTuberculose.Add(tosseCataro);
+            operadoresTuberculose.Add(e);
+            sintomasTuberculose.Add(faltaAr);
+            operadoresTuberculose.Add(e);
+            sintomasTuberculose.Add(perdaPeso);
+            Regra regraTuberculose= new Regra(sistomasTuberculose,Tuberculose,operadoresTuberculose);
+
             //sintomas Dengue
             List<Fato> sistomasDengue= new List<Fato>();            
             List<Operador> operadoresDengue= new List<Operador>();
@@ -80,7 +91,6 @@ namespace cefet_ia_trabalhoFinal
             sistomasDengue.Add(manchasPele);
             Regra regraDengue= new Regra(sistomasDengue,dengue,operadoresDengue);
 
-            //Relação doencas e sintomas
             //sintomas AVC
             List<Fato> sistomasAVC= new List<Fato>();            
             List<Operador> operadoresAVC= new List<Operador>();
@@ -179,13 +189,12 @@ namespace cefet_ia_trabalhoFinal
             operadoresGripe.Add(Operador.E);
             Regra regraGripe= new Regra(sistomasGripe,gripe,operadoresGripe);
 
-            //SINTOMAS de que?
+            //SINTOMAS DA DOENCA DO USUARIO
             List<Fato> sistomas= new List<Fato>();
             sistomas.Add(miccaoFrequente);
             sistomas.Add(visaoTurva);
             sistomas.Add(sudorese);
             sistomas.Add(sedeExcessiva);
-             
 
             //Console.WriteLine(baseConhecimento.ToString());             
            
@@ -203,7 +212,8 @@ namespace cefet_ia_trabalhoFinal
             baseConhecimento.AdicionaRegra(regraDiabetes1);  
             baseConhecimento.AdicionaRegra(regraDengue);
             baseConhecimento.AdicionaRegra(regraGripe);
-            
+            baseConhecimento.AdicionaRegra(regraTuberculose);
+
             Console.WriteLine("Doenças encontradas:");
             foreach (KeyValuePair<string, Fato> doenca in doencas ){
                 Console.WriteLine(doenca.Value.ToString());
