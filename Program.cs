@@ -8,9 +8,6 @@ namespace cefet_ia_trabalhoFinal
         static void Main(string[] args)
         {
             
-            //doenças
-            Doenca asma= new Doenca("Bronquite"); //8
-
             //sintomas
             Sintoma alteracaoFala= new Sintoma("Alteração na fala");
             Sintoma alteracaoVisao= new Sintoma("Alteração na visão");
