@@ -12,9 +12,9 @@ namespace cefet_ia_trabalhoFinal
             Doenca cancer= new Doenca("Cancer"); //1
             Doenca oxiuros= new Doenca("Oxiuros"); //2
             Doenca gripe= new Doenca("Gripe"); //3
-            Doenca pneumonia= new Doenca("Derrame"); //4
+            Doenca pneumonia= new Doenca("Pneumonia"); //4
             Doenca aids= new Doenca("Aids"); //5
-            Doenca infarte= new Doenca("Infarte"); //6
+            Doenca infarto= new Doenca("Infarto"); //6
             Doenca diabetes1= new Doenca("Diabetes Tipo 1"); //7
             Doenca asma= new Doenca("Asma"); //8
             Doenca tuberculose= new Doenca("Tuberculose"); //9
@@ -37,6 +37,8 @@ namespace cefet_ia_trabalhoFinal
             Sintoma dorGarganta= new Sintoma("Dor de Garganta");
             Sintoma dorPeito= new Sintoma("Dor no peito");
             
+            Sintoma extrmoCansaco= new Sintoma("Extremo cansaço");
+
             Sintoma fadiga= new Sintoma("Fadiga");
             Sintoma faltaAr=new Sintoma ("Falta de ar");
             Sintoma febre = new Sintoma("Febre");
@@ -47,6 +49,7 @@ namespace cefet_ia_trabalhoFinal
             
             Sintoma miccaoFrequente=new Sintoma ("Micção frequente");
             Sintoma macicatriz=new Sintoma("Má cicatrização");
+            Sintoma manchasPele=new Sintoma ("Manchas na pele");
 
             Sintoma perdaCoordenacao= new Sintoma("Perda de coordenação");
             Sintoma pruidoAnal= new Sintoma("Pruido Anal");
@@ -63,8 +66,22 @@ namespace cefet_ia_trabalhoFinal
             
             Sintoma visaoTurva=new Sintoma ("Visão turva");
             
+            //sintomas Dengue
+            List<Fato> sistomasDengue= new List<Fato>();            
+            List<Operador> operadoresDengue= new List<Operador>();
+            sistomasDengue.Add(tontura);
+            operadoresDengue.Add(ou);
+            sistomasDengue.Add(dorCabeca);
+            operadoresDengue.Add(e);
+            sistomasDengue.Add(extremoCansaco);
+            operadoresDengue.Add(e);
+            sistomasDengue.Add(febre);
+            operadoresDengue.Add(e);
+            sistomasDengue.Add(manchasPele);
+            Regra regraDengue= new Regra(sistomasDengue,dengue,operadoresDengue);
+
             //Relação doencas e sintomas
-            
+            //sintomas AVC
             List<Fato> sistomasAVC= new List<Fato>();            
             List<Operador> operadoresAVC= new List<Operador>();
             sistomasAVC.Add(formigamentoFace);     
@@ -86,12 +103,14 @@ namespace cefet_ia_trabalhoFinal
             sistomasAVC.Add(dorCabeca); 
             Regra regraAVC= new Regra(sistomasAVC,avc,operadoresAVC);
 
+            //sintomas oxiurus
             List<Fato> sistomasOxi= new List<Fato>();
             sistomasOxi.Add(pruidoAnal);
             List<Operador> operadoresOxi= new List<Operador>();
             Operador e = Operador.E;
             Operador ou = Operador.OU;
 
+            //sintomas infarte
             Doenca infarto =new Doenca("Infarto");
             List<Fato> sistomasInfarto= new List<Fato>();
             List<Operador> operadoresInfarto= new List<Operador>();
@@ -110,6 +129,7 @@ namespace cefet_ia_trabalhoFinal
             sistomasInfarto.Add(ansiedade);
             Regra regraInfarto= new Regra(sistomasInfarto,infarto,operadoresInfarto);
             
+            //sintomas pneumonia
             Doenca pneumonia =new Doenca("Pneumonia");
             List<Fato> sistomasPneumonia= new List<Fato>();
             List<Operador> operadoresPneumonia= new List<Operador>();
@@ -132,6 +152,7 @@ namespace cefet_ia_trabalhoFinal
             sistomasPneumonia.Add(dorPeito);
             Regra regraPneumonia= new Regra(sistomasPneumonia,pneumonia,operadoresPneumonia);
             
+            //sintomas diabetes
             Doenca diabetes1 =new Doenca("Diabetes tipo 1");
             List<Fato> sistomasDiabetes1= new List<Fato>();
             List<Operador> operadoresDiabetes1= new List<Operador>();
@@ -150,25 +171,7 @@ namespace cefet_ia_trabalhoFinal
             sintomasDiabetes1.Add(macicatriz);
             Regra regraDiabetes1= new Regra(sistomasDiabetes1,diabetes1,operadoresDiabetes1);
     
-            
-            BaseConhecimento baseConhecimento = new BaseConhecimento();
-            baseConhecimento.AdicionaRegra(regraInfarto);            
-            baseConhecimento.AdicionaRegra(regraAVC);  
-            baseConhecimento.AdicionaRegra(regraPneumonia);         
-            baseConhecimento.AdicionaRegra(regraDiabetes1);   
-
-            //Console.WriteLine(baseConhecimento.ToString());             
-           
-            MotorInferencia motorInferencia= new MotorInferencia(baseConhecimento);
-
-            List<Fato> sistomas= new List<Fato>();
-            sistomas.Add(miccaoFrequente);
-            sistomas.Add(visaoTurva);
-            sistomas.Add(sudorese);
-            sistomas.Add(sedeExcessiva);
-            
-            Dictionary<string, Fato> doencas= motorInferencia.buscar(sistomas);
-            
+            //Sintomas Gripe
             List<Fato> sistomasGripe= new List<Fato>();
             sistomasGripe.Add(dorGarganta);
             sistomasGripe.Add(tosse);
@@ -176,6 +179,31 @@ namespace cefet_ia_trabalhoFinal
             operadoresGripe.Add(Operador.E);
             Regra regraGripe= new Regra(sistomasGripe,gripe,operadoresGripe);
 
+            //SINTOMAS de que?
+            List<Fato> sistomas= new List<Fato>();
+            sistomas.Add(miccaoFrequente);
+            sistomas.Add(visaoTurva);
+            sistomas.Add(sudorese);
+            sistomas.Add(sedeExcessiva);
+             
+
+            //Console.WriteLine(baseConhecimento.ToString());             
+           
+            MotorInferencia motorInferencia= new MotorInferencia(baseConhecimento);
+
+            
+            Dictionary<string, Fato> doencas= motorInferencia.buscar(sistomas);
+            
+            
+
+            BaseConhecimento baseConhecimento = new BaseConhecimento();
+            baseConhecimento.AdicionaRegra(regraInfarto);            
+            baseConhecimento.AdicionaRegra(regraAVC);  
+            baseConhecimento.AdicionaRegra(regraPneumonia);         
+            baseConhecimento.AdicionaRegra(regraDiabetes1);  
+            baseConhecimento.AdicionaRegra(regraDengue);
+            baseConhecimento.AdicionaRegra(regraGripe);
+            
             Console.WriteLine("Doenças encontradas:");
             foreach (KeyValuePair<string, Fato> doenca in doencas ){
                 Console.WriteLine(doenca.Value.ToString());
