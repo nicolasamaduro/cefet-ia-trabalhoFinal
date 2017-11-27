@@ -7,36 +7,21 @@ namespace cefet_ia_trabalhoFinal
     {
         static void Main(string[] args)
         {
-            Sintoma dorGarganta= new Sintoma("Dor de Garganta");
-            Sintoma tosse= new Sintoma("Tosse");
-            Sintoma pruidoAnal= new Sintoma("Pruido Anal");
             
+            //doenças
             Doenca cancer= new Doenca("Cancer"); //1
             Doenca oxiuros= new Doenca("Oxiuros"); //2
             Doenca gripe= new Doenca("Gripe"); //3
             Doenca pneumonia= new Doenca("Derrame"); //4
             Doenca aids= new Doenca("Aids"); //5
             Doenca infarte= new Doenca("Infarte"); //6
-            Doenca diabetes= new Doenca("Diabetes"); //7
+            Doenca diabetes1= new Doenca("Diabetes Tipo 1"); //7
             Doenca asma= new Doenca("Asma"); //8
             Doenca tuberculose= new Doenca("Tuberculose"); //9
             Doenca dengue= new Doenca("Dengue"); //10
             Doenca avc =new Doenca("Derrame cerebral (AVC)");  
 
-            List<Fato> sistomasGripe= new List<Fato>();
-            sistomasGripe.Add(dorGarganta);
-            sistomasGripe.Add(tosse);
-            List<Operador> operadoresGripe= new List<Operador>();
-            operadoresGripe.Add(Operador.E);
-
-            Regra regraGripe= new Regra(sistomasGripe,gripe,operadoresGripe);
-
-            List<Fato> sistomasOxi= new List<Fato>();
-            sistomasOxi.Add(pruidoAnal);
-            List<Operador> operadoresOxi= new List<Operador>();
-Operador e = Operador.E;
-Operador ou = Operador.OU;
-
+            //sintomas
             Sintoma alteracaoFala= new Sintoma("Alteração na fala");
             Sintoma alteracaoVisao= new Sintoma("Alteração na visão");
             Sintoma ansiedade= new Sintoma("Ansiedade");
@@ -49,6 +34,7 @@ Operador ou = Operador.OU;
 
             Sintoma dificultadeRespiratoria = new Sintoma("Dificultade respiratória");
             Sintoma dorCabeca = new Sintoma("Dor de cabeça");
+            Sintoma dorGarganta= new Sintoma("Dor de Garganta");
             Sintoma dorPeito= new Sintoma("Dor no peito");
             
             Sintoma fadiga= new Sintoma("Fadiga");
@@ -60,19 +46,24 @@ Operador ou = Operador.OU;
             Sintoma fraqueza= new Sintoma("Fraqueza");
             
             Sintoma miccaoFrequente=new Sintoma ("Micção frequente");
+            Sintoma macicatriz=new Sintoma("Má cicatrização");
 
             Sintoma perdaCoordenacao= new Sintoma("Perda de coordenação");
+            Sintoma pruidoAnal= new Sintoma("Pruido Anal");
 
             Sintoma sedeExcessiva=new Sintoma ("Sede excessiva");
             
             Sintoma sudorese=new Sintoma ("Sudorese");
 
+            Sintoma tosse= new Sintoma("Tosse");
             Sintoma tossePus = new Sintoma("Tosse com pus");
             Sintoma tosseCataro = new Sintoma("Tosse com cataro");
             Sintoma tosseSeca = new Sintoma("Tosse seca");
             Sintoma tontura= new Sintoma("Tontura");    
             
             Sintoma visaoTurva=new Sintoma ("Visão turva");
+            
+            //Relação doencas e sintomas
             
             List<Fato> sistomasAVC= new List<Fato>();            
             List<Operador> operadoresAVC= new List<Operador>();
@@ -94,7 +85,13 @@ Operador ou = Operador.OU;
             operadoresAVC.Add(e);
             sistomasAVC.Add(dorCabeca); 
             Regra regraAVC= new Regra(sistomasAVC,avc,operadoresAVC);
-                          
+
+            List<Fato> sistomasOxi= new List<Fato>();
+            sistomasOxi.Add(pruidoAnal);
+            List<Operador> operadoresOxi= new List<Operador>();
+            Operador e = Operador.E;
+            Operador ou = Operador.OU;
+
             Doenca infarto =new Doenca("Infarto");
             List<Fato> sistomasInfarto= new List<Fato>();
             List<Operador> operadoresInfarto= new List<Operador>();
@@ -149,9 +146,11 @@ Operador ou = Operador.OU;
             sistomasDiabetes1.Add(sudorese);
             operadoresDiabetes1.Add(ou); 
             sistomasDiabetes1.Add(fadiga);
+            operadoresDiabetes1.Add(ou); 
+            sintomasDiabetes1.Add(macicatriz);
             Regra regraDiabetes1= new Regra(sistomasDiabetes1,diabetes1,operadoresDiabetes1);
     
-
+            
             BaseConhecimento baseConhecimento = new BaseConhecimento();
             baseConhecimento.AdicionaRegra(regraInfarto);            
             baseConhecimento.AdicionaRegra(regraAVC);  
@@ -170,6 +169,13 @@ Operador ou = Operador.OU;
             
             Dictionary<string, Fato> doencas= motorInferencia.buscar(sistomas);
             
+            List<Fato> sistomasGripe= new List<Fato>();
+            sistomasGripe.Add(dorGarganta);
+            sistomasGripe.Add(tosse);
+            List<Operador> operadoresGripe= new List<Operador>();
+            operadoresGripe.Add(Operador.E);
+            Regra regraGripe= new Regra(sistomasGripe,gripe,operadoresGripe);
+
             Console.WriteLine("Doenças encontradas:");
             foreach (KeyValuePair<string, Fato> doenca in doencas ){
                 Console.WriteLine(doenca.Value.ToString());
