@@ -11,10 +11,17 @@ namespace cefet_ia_trabalhoFinal
             Sintoma tosse= new Sintoma("Tosse");
             Sintoma pruidoAnal= new Sintoma("Pruido Anal");
             
-            Doenca cancer= new Doenca("Cancer");
-            Doenca oxiuros= new Doenca("Oxiuros");
-            Doenca gripe= new Doenca("Gripe");
-
+            Doenca cancer= new Doenca("Cancer"); //1
+            Doenca oxiuros= new Doenca("Oxiuros"); //2
+            Doenca gripe= new Doenca("Gripe"); //3
+            Doenca pneumonia= new Doenca("Derrame"); //4
+            Doenca aids= new Doenca("Aids"); //5
+            Doenca infarte= new Doenca("Infarte"); //6
+            Doenca diabetes= new Doenca("Diabetes"); //7
+            Doenca asma= new Doenca("Asma"); //8
+            Doenca tuberculose= new Doenca("Tuberculose"); //9
+            Doenca dengue= new Doenca("Dengue"); //10
+            
             List<Fato> sistomasGripe= new List<Fato>();
             sistomasGripe.Add(dorGarganta);
             sistomasGripe.Add(tosse);
