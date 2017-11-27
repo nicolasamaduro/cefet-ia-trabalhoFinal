@@ -7,7 +7,6 @@ namespace cefet_ia_trabalhoFinal
     {
         static void Main(string[] args)
         {
-<<<<<<< HEAD
             Sintoma dorGarganta= new Sintoma("Dor de Garganta");
             Sintoma tosse= new Sintoma("Tosse");
             Sintoma pruidoAnal= new Sintoma("Pruido Anal");
@@ -22,7 +21,8 @@ namespace cefet_ia_trabalhoFinal
             Doenca asma= new Doenca("Asma"); //8
             Doenca tuberculose= new Doenca("Tuberculose"); //9
             Doenca dengue= new Doenca("Dengue"); //10
-            
+            Doenca avc =new Doenca("Derrame cerebral (AVC)");  
+
             List<Fato> sistomasGripe= new List<Fato>();
             sistomasGripe.Add(dorGarganta);
             sistomasGripe.Add(tosse);
@@ -34,39 +34,46 @@ namespace cefet_ia_trabalhoFinal
             List<Fato> sistomasOxi= new List<Fato>();
             sistomasOxi.Add(pruidoAnal);
             List<Operador> operadoresOxi= new List<Operador>();
-=======
 Operador e = Operador.E;
 Operador ou = Operador.OU;
->>>>>>> 343e30fd77d6cbd2c5c581dc0ec837fc2e0a7d3c
 
-            Sintoma dorPeito= new Sintoma("Dor no peito");
-            Sintoma apertoPeito= new Sintoma("Aperto no peito");
-            Sintoma formigamentoBraco= new Sintoma("Formigamento nos braços");
-            Sintoma fadiga= new Sintoma("Fadiga");
-            Sintoma tontura= new Sintoma("Tontura");    
-            Sintoma batCarAnormal= new Sintoma("Batimento cardíaco anormal");
-            Sintoma ansiedade= new Sintoma("Ansiedade");
-            Sintoma fraqueza= new Sintoma("Fraqueza");
-            Sintoma formigamentoFace= new Sintoma("Formigamento na face");
-            Sintoma confusao= new Sintoma("Confusão");
             Sintoma alteracaoFala= new Sintoma("Alteração na fala");
             Sintoma alteracaoVisao= new Sintoma("Alteração na visão");
-            Sintoma perdaCoordenacao= new Sintoma("Perda de coordenação");
+            Sintoma ansiedade= new Sintoma("Ansiedade");
+            Sintoma apertoPeito= new Sintoma("Aperto no peito");
+
+            Sintoma batCarAnormal= new Sintoma("Batimento cardíaco anormal");
+            
+            Sintoma calafrios = new Sintoma("Calafrios");
+            Sintoma confusao= new Sintoma("Confusão");
+
+            Sintoma dificultadeRespiratoria = new Sintoma("Dificultade respiratória");
             Sintoma dorCabeca = new Sintoma("Dor de cabeça");
+            Sintoma dorPeito= new Sintoma("Dor no peito");
+            
+            Sintoma fadiga= new Sintoma("Fadiga");
+            Sintoma faltaAr=new Sintoma ("Falta de ar");
+            Sintoma febre = new Sintoma("Febre");
+            Sintoma fomeExcessiva=new Sintoma ("Fome excessiva");
+            Sintoma formigamentoBraco= new Sintoma("Formigamento nos braços");
+            Sintoma formigamentoFace= new Sintoma("Formigamento na face");
+            Sintoma fraqueza= new Sintoma("Fraqueza");
+            
+            Sintoma miccaoFrequente=new Sintoma ("Micção frequente");
+
+            Sintoma perdaCoordenacao= new Sintoma("Perda de coordenação");
+
+            Sintoma sedeExcessiva=new Sintoma ("Sede excessiva");
+            
+            Sintoma sudorese=new Sintoma ("Sudorese");
+
             Sintoma tossePus = new Sintoma("Tosse com pus");
             Sintoma tosseCataro = new Sintoma("Tosse com cataro");
             Sintoma tosseSeca = new Sintoma("Tosse seca");
-            Sintoma febre = new Sintoma("Febre");
-            Sintoma calafrios = new Sintoma("Calafrios");
-            Sintoma dificultadeRespiratoria = new Sintoma("Dificultade respiratória");
-            Sintoma faltaAr=new Sintoma ("Falta de ar");
-            Sintoma sedeExcessiva=new Sintoma ("Sede excessiva");
-            Sintoma miccaoFrequente=new Sintoma ("Micção frequente");
-            Sintoma fomeExcessiva=new Sintoma ("Fome excessiva");
-            Sintoma visaoTurva=new Sintoma ("Visão turva");
-            Sintoma sudorese=new Sintoma ("Sudorese");
+            Sintoma tontura= new Sintoma("Tontura");    
             
-            Doenca avc =new Doenca("Derrame cerebral (AVC)");  
+            Sintoma visaoTurva=new Sintoma ("Visão turva");
+            
             List<Fato> sistomasAVC= new List<Fato>();            
             List<Operador> operadoresAVC= new List<Operador>();
             sistomasAVC.Add(formigamentoFace);     
