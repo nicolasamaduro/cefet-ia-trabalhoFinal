@@ -1,0 +1,10 @@
+C:\Users\nicol\source\repos\cefet_ia_trabalhoFinal\cefet_ia_trabalhoFinal\obj\Debug\cefet_ia_trabalhoFinal.csprojResolveAssemblyReference.cache
+C:\Users\nicol\source\repos\cefet_ia_trabalhoFinal\cefet_ia_trabalhoFinal\obj\Debug\cefet_ia_trabalhoFinal.Properties.Resources.resources
+C:\Users\nicol\source\repos\cefet_ia_trabalhoFinal\cefet_ia_trabalhoFinal\obj\Debug\cefet_ia_trabalhoFinal.tela.Tela.resources
+C:\Users\nicol\source\repos\cefet_ia_trabalhoFinal\cefet_ia_trabalhoFinal\obj\Debug\cefet_ia_trabalhoFinal.csproj.GenerateResource.Cache
+C:\Users\nicol\source\repos\cefet_ia_trabalhoFinal\cefet_ia_trabalhoFinal\obj\Debug\cefet_ia_trabalhoFinal.csproj.CoreCompileInputs.cache
+C:\Users\nicol\source\repos\cefet_ia_trabalhoFinal\cefet_ia_trabalhoFinal\bin\Debug\cefet_ia_trabalhoFinal.exe.config
+C:\Users\nicol\source\repos\cefet_ia_trabalhoFinal\cefet_ia_trabalhoFinal\bin\Debug\cefet_ia_trabalhoFinal.exe
+C:\Users\nicol\source\repos\cefet_ia_trabalhoFinal\cefet_ia_trabalhoFinal\bin\Debug\cefet_ia_trabalhoFinal.pdb
+C:\Users\nicol\source\repos\cefet_ia_trabalhoFinal\cefet_ia_trabalhoFinal\obj\Debug\cefet_ia_trabalhoFinal.exe
+C:\Users\nicol\source\repos\cefet_ia_trabalhoFinal\cefet_ia_trabalhoFinal\obj\Debug\cefet_ia_trabalhoFinal.pdb
