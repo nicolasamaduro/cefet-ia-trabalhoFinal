@@ -20,61 +20,105 @@ namespace cefet_ia_trabalhoFinal
             Sintoma alteracaoFala = new Sintoma("Alteração na fala");
             sintomas.Add(alteracaoFala);
             Sintoma alteracaoVisao = new Sintoma("Alteração na visão");
+            sintomas.Add(alteracaoVisao);
             Sintoma ansiedade = new Sintoma("Ansiedade");
+            sintomas.Add(ansiedade);
             Sintoma apertoPeito = new Sintoma("Aperto no peito");
+            sintomas.Add(apertoPeito);
 
             Sintoma batCarAnormal = new Sintoma("Batimento cardíaco anormal");
+            sintomas.Add(batCarAnormal);
 
             Sintoma calafrios = new Sintoma("Calafrios");
+            sintomas.Add(calafrios);
             Sintoma confusao = new Sintoma("Confusão");
+            sintomas.Add(confusao);
             Sintoma chiadoPeito = new Sintoma("Chiado no peito");
+            sintomas.Add(chiadoPeito);
 
             Sintoma dificultadeRespiratoria = new Sintoma("Dificultade respiratória");
+            sintomas.Add(dificultadeRespiratoria);
             Sintoma dorCabeca = new Sintoma("Dor de cabeça");
+            sintomas.Add(dorCabeca);
             Sintoma dorGarganta = new Sintoma("Dor de Garganta");
+            sintomas.Add(dorGarganta);
             Sintoma dorPeito = new Sintoma("Dor no peito");
+            sintomas.Add(dorPeito);
 
             Sintoma extremoCansaco = new Sintoma("Extremo cansaço");
+            sintomas.Add(extremoCansaco);
 
             Sintoma fadiga = new Sintoma("Fadiga");
+            sintomas.Add(fadiga);
             Sintoma faltaAr = new Sintoma("Falta de ar");
+            sintomas.Add(faltaAr);
             Sintoma febre = new Sintoma("Febre");
+            sintomas.Add(febre);
             Sintoma fomeExcessiva = new Sintoma("Fome excessiva");
+            sintomas.Add(fomeExcessiva);
             Sintoma formigamentoBraco = new Sintoma("Formigamento nos braços");
+            sintomas.Add(formigamentoBraco);
             Sintoma formigamentoFace = new Sintoma("Formigamento na face");
+            sintomas.Add(formigamentoFace);
             Sintoma fraqueza = new Sintoma("Fraqueza");
+            sintomas.Add(fraqueza);
 
             Sintoma inchacoAbdomen = new Sintoma("Inchaco abdomen");
+            sintomas.Add(inchacoAbdomen);
             Sintoma inchacoFace = new Sintoma("Inchaco face");
+            sintomas.Add(inchacoFace);
             Sintoma inchacoGarganta = new Sintoma("Inchaco garganta");
+            sintomas.Add(inchacoGarganta);
             Sintoma irritacaoGarganta = new Sintoma("Irritação Garganta");
+            sintomas.Add(irritacaoGarganta);
 
             Sintoma miccaoFrequente = new Sintoma("Micção frequente");
+            sintomas.Add(miccaoFrequente);
             Sintoma macicatriz = new Sintoma("Má cicatrização");
+            sintomas.Add(macicatriz);
             Sintoma manchasPele = new Sintoma("Manchas na pele");
+            sintomas.Add(manchasPele);
             Sintoma mauHalito = new Sintoma("Mau hálito");
+            sintomas.Add(mauHalito);
 
             Sintoma perdaPeso = new Sintoma("Perda de peso");
+            sintomas.Add(perdaPeso);
             Sintoma perdaApetite = new Sintoma("Perda de apetite");
+            sintomas.Add(perdaApetite);
             Sintoma perdaCoordenacao = new Sintoma("Perda de coordenação");
+            sintomas.Add(perdaCoordenacao);
             Sintoma pruidoAnal = new Sintoma("Pruido Anal");
+            sintomas.Add(pruidoAnal);
             Sintoma peleAmarela = new Sintoma("Pele amarelada");
+            sintomas.Add(peleAmarela);
             Sintoma pigarro = new Sintoma("Pigarro");
+            sintomas.Add(pigarro);
 
             Sintoma ronquidao = new Sintoma("Ronquidao");
+            sintomas.Add(ronquidao);
 
             Sintoma sedeExcessiva = new Sintoma("Sede excessiva");
+            sintomas.Add(sedeExcessiva);
             Sintoma sudorese = new Sintoma("Sudorese");
+            sintomas.Add(sudorese);
 
             Sintoma tosse = new Sintoma("Tosse");
+            sintomas.Add(tosse);
             Sintoma tossePus = new Sintoma("Tosse com pus");
+            sintomas.Add(tossePus);
             Sintoma tosseCataro = new Sintoma("Tosse com cataro");
+            sintomas.Add(tosseCataro);
             Sintoma tosseSeca = new Sintoma("Tosse seca");
+            sintomas.Add(tosseSeca);
             Sintoma tosseSangue = new Sintoma("Tosse sangue");
+            sintomas.Add(tosseSangue);
             Sintoma tontura = new Sintoma("Tontura");
+            sintomas.Add(tontura);
 
             Sintoma visaoTurva = new Sintoma("Visão turva");
+            sintomas.Add(visaoTurva);
             Sintoma vomito = new Sintoma("Vômito");
+            sintomas.Add(vomito);
 
 
 
