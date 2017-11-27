@@ -11,11 +11,9 @@ namespace cefet_ia_trabalhoFinal
 
         public Regra(List<Fato> condicoes, Fato conclusao, List<Operador> operadores)
         {
-
             Conclusao = conclusao;
             Condicoes = condicoes;
             Operadores = operadores;
-
         }
 
         public bool isValida() => (Condicoes.Count == Operadores.Count + 1);

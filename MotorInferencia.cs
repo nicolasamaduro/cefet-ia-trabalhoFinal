@@ -37,27 +37,38 @@ namespace cefet_ia_trabalhoFinal
                     {
                         resultados.Add(verificaSintoma(sintomas, condicao));
                     }
-                    int i = 0;
-                    bool resultado = false;
-                    if (regra.Operadores.Count == 0)
-                    {
-                        resultado = resultados[0];
+					bool retirados=false;
+					for(int i=0, j=0; i<regra.Operadores.Count;i++,j++){
+                        if(regra.Operadores[i].Equals(Operador.OU)){
+                            resultados[j]=resultados[j]||resultados[j+1];
+							resultados.RemoveAt(j+1);
+							retirados=true;
+							i++;
+							while (i<regra.Operadores.Count && regra.Operadores[i].Equals(Operador.OU))
+							{ 
+								resultados[j] = resultados[j]||resultados[j+1];							
+								resultados.RemoveAt(j+1);
+								i++;
+							}
+							i--;
+                        }else{
+							if (retirados){
+								j--;
+								retirados=false;
+							}
+						}
                     }
-                    else
-                    {
-                        foreach (Operador operador in regra.Operadores)
-                        {
-                            if (operador.Equals(Operador.E))
-                            {
-                                resultado = resultado || (resultados[i] && resultados[i + 1]);
-                            }
-                            else
-                            {
-                                resultado = resultado || (resultados[i] || resultados[i + 1]);
-                            }
-                            i++;
-                        }
+					
+                    
+					bool resultado=resultados[0];
+					foreach(bool r in resultados){
+						if (resultado==false){
+							break;
+						}
+                        resultado=resultado&&r;
                     }
+                    
+                    
                     if (resultado)
                     {
                         if (!doencas.ContainsKey(regra.Conclusao.Nome))
