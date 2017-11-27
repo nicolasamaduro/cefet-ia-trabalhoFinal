@@ -9,8 +9,7 @@ namespace cefet_ia_trabalhoFinal
         {
             
             //doenças
-            Doenca cancer= new Doenca("CancerPulmao"); //1
-            Doenca asma= new Doenca("Asma"); //8
+            Doenca asma= new Doenca("Bronquite"); //8
 
             //sintomas
             Sintoma alteracaoFala= new Sintoma("Alteração na fala");
@@ -22,6 +21,7 @@ namespace cefet_ia_trabalhoFinal
             
             Sintoma calafrios = new Sintoma("Calafrios");
             Sintoma confusao= new Sintoma("Confusão");
+            Sintoma chiadoPeito= new Sintoma("Chiado no peito");
 
             Sintoma dificultadeRespiratoria = new Sintoma("Dificultade respiratória");
             Sintoma dorCabeca = new Sintoma("Dor de cabeça");
@@ -41,6 +41,7 @@ namespace cefet_ia_trabalhoFinal
             Sintoma inchacoAbdomen = new Sintoma("Inchaco abdomen");
             Sintoma inchacoFace = new Sintoma("Inchaco face");
             Sintoma inchacoGarganta = new Sintoma("Inchaco garganta");
+            Sintoma irritacaoGarganta = new Sintoma("Irritação Garganta");
 
             Sintoma miccaoFrequente=new Sintoma ("Micção frequente");
             Sintoma macicatriz=new Sintoma("Má cicatrização");
@@ -52,6 +53,7 @@ namespace cefet_ia_trabalhoFinal
             Sintoma perdaCoordenacao= new Sintoma("Perda de coordenação");
             Sintoma pruidoAnal= new Sintoma("Pruido Anal");
             Sintoma peleAmarela=new Sintoma("Pele amarelada");
+            Sintoma pigarro=new Sintoma("Pigarro");
 
             Sintoma ronquidao=new Sintoma("Ronquidao");
 
@@ -153,6 +155,23 @@ namespace cefet_ia_trabalhoFinal
             operadoresDiabetes1.Add(ou); 
             sintomasDiabetes1.Add(macicatriz);
             Regra regraDiabetes1= new Regra(sistomasDiabetes1,diabetes1,operadoresDiabetes1);
+            
+            //sintomas Bronquite
+            List<Fato> sistomasBronquite= new List<Fato>();
+            List<Operador> operadoresBronquite= new List<Operador>();
+            sintomasBronquite.Add(faltaAr);
+            operadoresBronquite.Add(e);
+            sintomasBronquite.Add(irritacaoGarganta);
+            operadoresBronquite.Add(e);
+            sintomasBronquite.Add(tosseCataro);
+            operadoresBronquite.Add(e);
+            sintomasBronquite.Add(dorPeito);
+            operadoresBronquite.Add(e);
+            sintomasBronquite.Add(chiadoPeito);
+            operadoresBronquite.Add(e);
+            sintomasBronquite.Add(pigarro);
+            Regra regraCirrose= new Regra(sistomasBronquite,bronquite,operadoresBronquite);
+            
             //sintomas Cancer pulmao
             List<Fato> sistomasCancerPulmao= new List<Fato>();
             List<Operador> operadoresCancerPulmao= new List<Operador>();
@@ -254,16 +273,17 @@ namespace cefet_ia_trabalhoFinal
             
 
             BaseConhecimento baseConhecimento = new BaseConhecimento();
-            baseConhecimento.AdicionaRegra(regraInfarto);            
-            baseConhecimento.AdicionaRegra(regraAVC);  
-            baseConhecimento.AdicionaRegra(regraPneumonia);         
-            baseConhecimento.AdicionaRegra(regraDiabetes1);  
-            baseConhecimento.AdicionaRegra(regraDengue);
-            baseConhecimento.AdicionaRegra(regraGripe);
-            baseConhecimento.AdicionaRegra(regraTuberculose);
-            baseConhecimento.AdicionaRegra(regraCirrose);
-            baseConhecimento.AdicionaRegra(regraCancerPulmao);
-            
+            baseConhecimento.AdicionaRegra(regraInfarto);//1        
+            baseConhecimento.AdicionaRegra(regraAVC);  //2
+            baseConhecimento.AdicionaRegra(regraPneumonia);//3         
+            baseConhecimento.AdicionaRegra(regraDiabetes1); //4
+            baseConhecimento.AdicionaRegra(regraDengue);//5
+            baseConhecimento.AdicionaRegra(regraGripe);//6
+            baseConhecimento.AdicionaRegra(regraTuberculose);//7
+            baseConhecimento.AdicionaRegra(regraCirrose);//8
+            baseConhecimento.AdicionaRegra(regraCancerPulmao);//9
+            baseConhecimento.AdicionaRegra(regraBronquite);//10
+
             Console.WriteLine("Doenças encontradas:");
             foreach (KeyValuePair<string, Fato> doenca in doencas ){
                 Console.WriteLine(doenca.Value.ToString());
