@@ -81,6 +81,9 @@ namespace cefet_ia_trabalhoFinal
             Sintoma mauHalito = new Sintoma("Mau hálito");
             sintomas.Add(mauHalito);
 
+            Sintoma nausea = new Sintoma("Náusea");
+            sintomas.Add(nausea);
+
             Sintoma perdaPeso = new Sintoma("Perda de peso");
             sintomas.Add(perdaPeso);
             Sintoma perdaApetite = new Sintoma("Perda de apetite");
@@ -297,6 +300,21 @@ namespace cefet_ia_trabalhoFinal
             sintomasDengue.Add(manchasPele);
             Regra regraDengue = new Regra(sintomasDengue, dengue, operadoresDengue);
 
+            //sintomas Hipertensão
+            Doenca hipertensao = new Doenca("Hipertensão");
+            List<Fato> sintomasHipertensao = new List<Fato>();
+            List<Operador> operadoresHipertensao = new List<Operador>();
+            sintomasHipertensao.Add(tontura);
+            operadoresHipertensao.Add(e);
+            sintomasHipertensao.Add(extremoCansaco);
+            operadoresHipertensao.Add(e);
+            sintomasHipertensao.Add(visaoTurva);
+            operadoresHipertensao.Add(e);
+            sintomasHipertensao.Add(nausea);
+            operadoresHipertensao.Add(ou);
+            sintomasHipertensao.Add(vomito);
+            Regra regraHipertensao = new Regra(sintomasHipertensao, hipertensao, operadoresHipertensao);
+
             BaseConhecimento baseConhecimento = new BaseConhecimento();
             baseConhecimento.AdicionaRegra(regraAVC);        
             baseConhecimento.AdicionaRegra(regraBronquite);  
@@ -304,6 +322,7 @@ namespace cefet_ia_trabalhoFinal
             baseConhecimento.AdicionaRegra(regraCirrose); 
             baseConhecimento.AdicionaRegra(regraDengue);
             baseConhecimento.AdicionaRegra(regraDiabetes1); 
+            baseConhecimento.AdicionaRegra(regraHipertensao);
             baseConhecimento.AdicionaRegra(regraInfarto);
             baseConhecimento.AdicionaRegra(regraPneumonia);
             baseConhecimento.AdicionaRegra(regraTuberculose);
